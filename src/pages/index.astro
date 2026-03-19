@@ -1,6 +1,123 @@
 ---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const galleries = await getCollection('galleries');
+const sorted = galleries.sort((a, b) => a.id.localeCompare(b.id));
 ---
-<html lang="de">
-<head><meta charset="UTF-8" /><title>Ernst Böhm Foto</title></head>
-<body><h1>Ernst Böhm Foto</h1></body>
-</html>
+<BaseLayout title="Meine beliebtesten Fotos">
+  <section class="hero">
+    <img
+      src="/images/misc/cropped-hintergrund.jpg"
+      alt="Ernst Böhm Arzt und Fotograf"
+      class="hero-img"
+    />
+    <div class="hero-overlay">
+      <h1 class="hero-title">Ernst Böhm Foto</h1>
+      <p class="hero-sub">Arzt · Fotograf · Buchautor</p>
+      <p class="hero-sub2">Unna · Soest · Arnsberg</p>
+    </div>
+  </section>
+
+  <section class="gallery-overview page-container">
+    <h2 class="page-title">Galerien</h2>
+    <div class="gallery-grid">
+      {sorted.map(g => (
+        <a href={`/galerien/${g.id}`} class="gallery-card">
+          <div class="gallery-card-img-wrap">
+            <img src={g.data.coverImage} alt={g.data.title} loading="lazy" />
+          </div>
+          <div class="gallery-card-title">{g.data.title}</div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.hero-sub {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.hero-sub2 {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  display: block;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.gallery-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.gallery-card-img-wrap {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.gallery-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-card:hover .gallery-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.gallery-card-title {
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+</style>
