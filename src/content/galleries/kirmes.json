@@ -1,0 +1,14 @@
+{
+  "title": "Kirmes",
+  "coverImage": "/images/kirmes/K1.jpg",
+  "images": [
+    { "src": "/images/kirmes/K1.jpg", "alt": "Kirmes 1" },
+    { "src": "/images/kirmes/K2.jpg", "alt": "Kirmes 2" },
+    { "src": "/images/kirmes/K3.jpg", "alt": "Kirmes 3" },
+    { "src": "/images/kirmes/K4.jpg", "alt": "Kirmes 4" },
+    { "src": "/images/kirmes/K5.jpg", "alt": "Kirmes 5" },
+    { "src": "/images/kirmes/K6.jpg", "alt": "Kirmes 6" },
+    { "src": "/images/kirmes/K7.jpg", "alt": "Kirmes 7" },
+    { "src": "/images/kirmes/K8.jpg", "alt": "Kirmes 8" }
+  ]
+}

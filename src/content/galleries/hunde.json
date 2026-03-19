@@ -1,0 +1,17 @@
+{
+  "title": "Hunde",
+  "coverImage": "/images/hunde/H1.jpg",
+  "images": [
+    { "src": "/images/hunde/H1.jpg", "alt": "Hunde 1" },
+    { "src": "/images/hunde/H2.jpg", "alt": "Hunde 2" },
+    { "src": "/images/hunde/EB1.jpg", "alt": "Hunde 3" },
+    { "src": "/images/hunde/EB2.jpg", "alt": "Hunde 4" },
+    { "src": "/images/hunde/EB3.jpg", "alt": "Hunde 5" },
+    { "src": "/images/hunde/EB4.jpg", "alt": "Hunde 6" },
+    { "src": "/images/hunde/EB5.jpg", "alt": "Hunde 7" },
+    { "src": "/images/hunde/EB6.jpg", "alt": "Hunde 8" },
+    { "src": "/images/hunde/EB7.jpg", "alt": "Hunde 9" },
+    { "src": "/images/hunde/EB8.jpg", "alt": "Hunde 10" },
+    { "src": "/images/hunde/EB9.jpg", "alt": "Hunde 11" }
+  ]
+}

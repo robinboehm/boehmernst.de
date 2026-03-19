@@ -1,0 +1,12 @@
+{
+  "title": "Bettler",
+  "coverImage": "/images/bettler/B7.jpg",
+  "images": [
+    { "src": "/images/bettler/B7.jpg", "alt": "Bettler 1" },
+    { "src": "/images/bettler/B8.jpg", "alt": "Bettler 2" },
+    { "src": "/images/bettler/B9.jpg", "alt": "Bettler 3" },
+    { "src": "/images/bettler/B10.jpg", "alt": "Bettler 4" },
+    { "src": "/images/bettler/B11.jpg", "alt": "Bettler 5" },
+    { "src": "/images/bettler/B12.jpg", "alt": "Bettler 6" }
+  ]
+}

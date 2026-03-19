@@ -1,0 +1,19 @@
+{
+  "title": "Medizin",
+  "coverImage": "/images/medizin/M1.jpg",
+  "images": [
+    { "src": "/images/medizin/M1.jpg", "alt": "Medizin 1" },
+    { "src": "/images/medizin/M2.jpg", "alt": "Medizin 2" },
+    { "src": "/images/medizin/M3.jpg", "alt": "Medizin 3" },
+    { "src": "/images/medizin/M4.jpg", "alt": "Medizin 4" },
+    { "src": "/images/medizin/M5.jpg", "alt": "Medizin 5" },
+    { "src": "/images/medizin/M6.jpg", "alt": "Medizin 6" },
+    { "src": "/images/medizin/M7.jpg", "alt": "Medizin 7" },
+    { "src": "/images/medizin/M8.jpg", "alt": "Medizin 8" },
+    { "src": "/images/medizin/M9.jpg", "alt": "Medizin 9" },
+    { "src": "/images/medizin/M10.jpg", "alt": "Medizin 10" },
+    { "src": "/images/medizin/M11.jpg", "alt": "Medizin 11" },
+    { "src": "/images/medizin/M12.jpg", "alt": "Medizin 12" },
+    { "src": "/images/medizin/M13.jpg", "alt": "Medizin 13" }
+  ]
+}

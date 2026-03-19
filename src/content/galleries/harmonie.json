@@ -1,0 +1,12 @@
+{
+  "title": "Harmonie",
+  "coverImage": "/images/harmonie/HA1.jpg",
+  "images": [
+    { "src": "/images/harmonie/HA1.jpg", "alt": "Harmonie 1" },
+    { "src": "/images/harmonie/HA2.jpg", "alt": "Harmonie 2" },
+    { "src": "/images/harmonie/HA3.jpg", "alt": "Harmonie 3" },
+    { "src": "/images/harmonie/HA4.jpg", "alt": "Harmonie 4" },
+    { "src": "/images/harmonie/HA5.jpg", "alt": "Harmonie 5" },
+    { "src": "/images/harmonie/HA6.jpg", "alt": "Harmonie 6" }
+  ]
+}

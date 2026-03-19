@@ -1,0 +1,15 @@
+{
+  "title": "Zeche",
+  "coverImage": "/images/zeche/Z1.jpg",
+  "images": [
+    { "src": "/images/zeche/Z1.jpg", "alt": "Zeche 1" },
+    { "src": "/images/zeche/Z2.jpg", "alt": "Zeche 2" },
+    { "src": "/images/zeche/Z3.jpg", "alt": "Zeche 3" },
+    { "src": "/images/zeche/Z4.jpg", "alt": "Zeche 4" },
+    { "src": "/images/zeche/Z5.jpg", "alt": "Zeche 5" },
+    { "src": "/images/zeche/Z6.jpg", "alt": "Zeche 6" },
+    { "src": "/images/zeche/Z7.jpg", "alt": "Zeche 7" },
+    { "src": "/images/zeche/Z8.jpg", "alt": "Zeche 8" },
+    { "src": "/images/zeche/Z9.jpg", "alt": "Zeche 9" }
+  ]
+}

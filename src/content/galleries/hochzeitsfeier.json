@@ -1,0 +1,17 @@
+{
+  "title": "Hochzeitsfeier",
+  "coverImage": "/images/hochzeitsfeier/HF1.jpg",
+  "images": [
+    { "src": "/images/hochzeitsfeier/HF1.jpg", "alt": "Hochzeitsfeier 1" },
+    { "src": "/images/hochzeitsfeier/HF2.jpg", "alt": "Hochzeitsfeier 2" },
+    { "src": "/images/hochzeitsfeier/HF3.jpg", "alt": "Hochzeitsfeier 3" },
+    { "src": "/images/hochzeitsfeier/HF4.jpg", "alt": "Hochzeitsfeier 4" },
+    { "src": "/images/hochzeitsfeier/HF5.jpg", "alt": "Hochzeitsfeier 5" },
+    { "src": "/images/hochzeitsfeier/HF6.jpg", "alt": "Hochzeitsfeier 6" },
+    { "src": "/images/hochzeitsfeier/HF7.jpg", "alt": "Hochzeitsfeier 7" },
+    { "src": "/images/hochzeitsfeier/HF8.jpg", "alt": "Hochzeitsfeier 8" },
+    { "src": "/images/hochzeitsfeier/HF9.jpg", "alt": "Hochzeitsfeier 9" },
+    { "src": "/images/hochzeitsfeier/HF10.jpg", "alt": "Hochzeitsfeier 10" },
+    { "src": "/images/hochzeitsfeier/HF11.jpg", "alt": "Hochzeitsfeier 11" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Urlaub",
+  "coverImage": "/images/urlaub/U01.jpg",
+  "images": [
+    { "src": "/images/urlaub/U01.jpg", "alt": "Urlaub 1" },
+    { "src": "/images/urlaub/U02.jpg", "alt": "Urlaub 2" },
+    { "src": "/images/urlaub/U03.jpg", "alt": "Urlaub 3" },
+    { "src": "/images/urlaub/U04.jpg", "alt": "Urlaub 4" },
+    { "src": "/images/urlaub/U05.jpg", "alt": "Urlaub 5" },
+    { "src": "/images/urlaub/U06.jpg", "alt": "Urlaub 6" },
+    { "src": "/images/urlaub/U7.jpg", "alt": "Urlaub 7" }
+  ]
+}

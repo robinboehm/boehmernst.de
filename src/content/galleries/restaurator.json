@@ -1,0 +1,15 @@
+{
+  "title": "Restaurator",
+  "coverImage": "/images/restaurator/R01.jpg",
+  "images": [
+    { "src": "/images/restaurator/R01.jpg", "alt": "Restaurator 1" },
+    { "src": "/images/restaurator/R02.jpg", "alt": "Restaurator 2" },
+    { "src": "/images/restaurator/R03.jpg", "alt": "Restaurator 3" },
+    { "src": "/images/restaurator/R04.jpg", "alt": "Restaurator 4" },
+    { "src": "/images/restaurator/R05.jpg", "alt": "Restaurator 5" },
+    { "src": "/images/restaurator/R06.jpg", "alt": "Restaurator 6" },
+    { "src": "/images/restaurator/R07.jpg", "alt": "Restaurator 7" },
+    { "src": "/images/restaurator/R08.jpg", "alt": "Restaurator 8" },
+    { "src": "/images/restaurator/R09.jpg", "alt": "Restaurator 9" }
+  ]
+}
