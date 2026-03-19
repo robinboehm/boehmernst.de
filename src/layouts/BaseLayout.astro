@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Fotografie von Dr. Ernst Böhm — Arzt, Fotograf und Buchautor aus Unna, Soest und Arnsberg.' } = Astro.props;
+
+const galleries = await getCollection('galleries');
+const sortedGalleries = galleries.sort((a, b) => a.id.localeCompare(b.id));
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} — Ernst Böhm Foto</title>
+  <link rel="icon" type="image/jpeg" href="/images/misc/cropped-hintergrund.jpg" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Ernst Böhm Foto</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="/">Galerien ▾</a>
+          <ul class="nav-dropdown-menu">
+            {sortedGalleries.map(g => (
+              <li><a href={`/galerien/${g.id}`}>{g.data.title}</a></li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/buchautor">Buchautor</a></li>
+        <li><a href="/impressum">Impressum</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <p>
+      © Ernst Böhm Foto
+      &nbsp;·&nbsp;
+      <a href="/impressum">Impressum</a>
+    </p>
+  </footer>
+</body>
+</html>
