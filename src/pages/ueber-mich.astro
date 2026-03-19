@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { base } from '../utils/base';
 ---
 <BaseLayout title="Über mich" description="Dr.(CS) Ernst Böhm — Arzt, Fotograf und Buchautor aus Unna, Soest und Arnsberg.">
   <div class="page-container">
@@ -9,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="about-layout">
       <div class="about-image">
         <img
-          src="/images/misc/frieda.jpg"
+          src={`${base}/images/misc/frieda.jpg`}
           alt="Dr. Ernst Böhm"
         />
       </div>

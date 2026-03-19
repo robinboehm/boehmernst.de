@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { base } from '../../utils/base';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -12,12 +13,13 @@ export async function getStaticPaths() {
 
 const { gallery } = Astro.props;
 const { title, images } = gallery.data;
+const imagesWithBase = images.map(img => ({ ...img, src: `${base}${img.src}` }));
 ---
 <BaseLayout title={title}>
   <div class="page-container">
     <h1 class="page-title">{title}</h1>
     <div class="photo-grid">
-      {images.map((img, i) => (
+      {imagesWithBase.map((img, i) => (
         <button
           class="photo-item"
           onclick={`openLightbox(${i})`}
@@ -38,7 +40,7 @@ const { title, images } = gallery.data;
   </div>
 </BaseLayout>
 
-<script define:vars={{ images }}>
+<script define:vars={{ images: imagesWithBase }}>
 let current = 0;
 
 function openLightbox(index) {

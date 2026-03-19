@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { base } from '../utils/base';
 ---
 <BaseLayout title="Buchautor" description="Ernst Böhm — Arzt, Fotograf und Buchautor. Mein neues Buch über Werkzeuge fürs Leben.">
   <div class="page-container">
@@ -9,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="book-layout">
       <div class="book-cover">
         <img
-          src="/images/misc/buchcover.jpg"
+          src={`${base}/images/misc/buchcover.jpg`}
           alt="Buchcover — Werkzeugkiste fürs Leben"
         />
         <a

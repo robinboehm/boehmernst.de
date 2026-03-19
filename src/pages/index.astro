@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { base } from '../utils/base';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const galleries = await getCollection('galleries');
@@ -8,7 +9,7 @@ const sorted = galleries.sort((a, b) => a.id.localeCompare(b.id));
 <BaseLayout title="Meine beliebtesten Fotos">
   <section class="hero">
     <img
-      src="/images/misc/cropped-hintergrund.jpg"
+      src={`${base}/images/misc/cropped-hintergrund.jpg`}
       alt="Ernst Böhm Arzt und Fotograf"
       class="hero-img"
     />
@@ -23,9 +24,9 @@ const sorted = galleries.sort((a, b) => a.id.localeCompare(b.id));
     <h2 class="page-title">Galerien</h2>
     <div class="gallery-grid">
       {sorted.map(g => (
-        <a href={`/galerien/${g.id}`} class="gallery-card">
+        <a href={`${base}/galerien/${g.id}`} class="gallery-card">
           <div class="gallery-card-img-wrap">
-            <img src={g.data.coverImage} alt={g.data.title} loading="lazy" />
+            <img src={`${base}${g.data.coverImage}`} alt={g.data.title} loading="lazy" />
           </div>
           <div class="gallery-card-title">{g.data.title}</div>
         </a>
