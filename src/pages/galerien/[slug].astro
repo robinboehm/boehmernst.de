@@ -1,0 +1,167 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const galleries = await getCollection('galleries');
+  return galleries.map(g => ({
+    params: { slug: g.id },
+    props: { gallery: g },
+  }));
+}
+
+const { gallery } = Astro.props;
+const { title, images } = gallery.data;
+---
+<BaseLayout title={title}>
+  <div class="page-container">
+    <h1 class="page-title">{title}</h1>
+    <div class="photo-grid">
+      {images.map((img, i) => (
+        <button
+          class="photo-item"
+          onclick={`openLightbox(${i})`}
+          aria-label={`${img.alt} vergrößern`}
+        >
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="event.stopPropagation(); prevImage()">‹</button>
+    <img id="lb-img" src="" alt="" onclick="event.stopPropagation()" />
+    <button class="lb-next" onclick="event.stopPropagation(); nextImage()">›</button>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ images }}>
+let current = 0;
+
+function openLightbox(index) {
+  current = index;
+  document.getElementById('lb-img').src = images[index].src;
+  document.getElementById('lb-img').alt = images[index].alt;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function prevImage() {
+  current = (current - 1 + images.length) % images.length;
+  document.getElementById('lb-img').src = images[current].src;
+  document.getElementById('lb-img').alt = images[current].alt;
+}
+
+function nextImage() {
+  current = (current + 1) % images.length;
+  document.getElementById('lb-img').src = images[current].src;
+  document.getElementById('lb-img').alt = images[current].alt;
+}
+
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') prevImage();
+  if (e.key === 'ArrowRight') nextImage();
+});
+
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+window.prevImage = prevImage;
+window.nextImage = nextImage;
+</script>
+
+<style>
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.photo-item {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border-radius: 2px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.photo-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+}
+
+.lb-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 1001;
+}
+
+.lb-close:hover { opacity: 1; }
+
+.lb-prev, .lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  padding: 1rem;
+  z-index: 1001;
+}
+
+.lb-prev { left: 1rem; }
+.lb-next { right: 1rem; }
+.lb-prev:hover, .lb-next:hover { opacity: 1; }
+</style>
