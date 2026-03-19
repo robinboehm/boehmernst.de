@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Buchautor" description="Ernst Böhm — Arzt, Fotograf und Buchautor. Mein neues Buch über Werkzeuge fürs Leben.">
+  <div class="page-container">
+    <h1 class="page-title">Buchautor</h1>
+    <p class="subtitle">Arzt, Fotograf und Buchautor aus Unna, Soest und Arnsberg</p>
+
+    <div class="book-layout">
+      <div class="book-cover">
+        <img
+          src="/images/misc/buchcover.jpg"
+          alt="Buchcover — Werkzeugkiste fürs Leben"
+        />
+        <a
+          href="https://amzn.eu/d/37EYcxx"
+          class="buy-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bei Amazon bestellen
+        </a>
+      </div>
+
+      <div class="book-text">
+        <h2>Mein neues Buch</h2>
+        <p>
+          Mein Vater hatte eine Werkzeugkiste. Wann immer es bei uns zu Hause ein Problem gab,
+          mein Vater fand fast immer in dieser Kiste das passende Werkzeug.
+        </p>
+        <p>
+          Als kleiner Junge begleitete ich mit Begeisterung meinen Vater in seine Werkstatt.
+          Diese Erfahrung hat mich geprägt — die Idee, dass man für jedes Problem das
+          richtige Werkzeug braucht.
+        </p>
+        <p>
+          Im Laufe meines Lebens habe ich mir meine eigene „Werkzeugkiste" aufgebaut:
+          Notizen, Gedanken und Erkenntnisse aus schwierigen Lebensphasen — über zwei Jahre
+          füllte ich drei Ordner. Das Neuro-Linguistische Programmieren (NLP) war dabei
+          besonders wertvoll.
+        </p>
+        <p>
+          Diese gesammelten Gedanken haben mir Glück und inneren Frieden gebracht.
+          Ich wollte sie in Buchform zusammenfassen — für alle, die sich in ähnlichen
+          Situationen befinden.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.subtitle {
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 3rem;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .book-layout { grid-template-columns: 1fr; }
+}
+
+.book-cover img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.buy-btn {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.buy-btn:hover {
+  background: var(--accent-hover);
+  color: #000;
+}
+
+.book-text h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.book-text p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+</style>
