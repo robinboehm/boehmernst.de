@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Impressum">
+  <div class="page-container">
+    <h1 class="page-title">Impressum</h1>
+
+    <div class="impressum-content">
+      <section>
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Dr.(CS) Ernst Böhm</p>
+        <p>Stiftstraße 4</p>
+        <p>59494 Soest</p>
+      </section>
+
+      <section>
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a href="mailto:ernst@boehmernst.de">ernst@boehmernst.de</a></p>
+      </section>
+
+      <section>
+        <h2>Urheberrecht</h2>
+        <p>
+          Alle Inhalte auf meinen Internetseiten unterliegen dem Urheberrecht und
+          dürfen ohne schriftliche Genehmigung des Autors nicht weiterverwendet werden.
+        </p>
+      </section>
+
+      <section>
+        <h2>Haftungsausschluss</h2>
+        <p>
+          Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für
+          die Inhalte externer Links. Für den Inhalt verlinkter Seiten sind
+          ausschließlich deren Betreiber verantwortlich.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.impressum-content {
+  max-width: 640px;
+}
+
+.impressum-content section {
+  margin-bottom: 2rem;
+}
+
+.impressum-content h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.impressum-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
+}
+</style>
