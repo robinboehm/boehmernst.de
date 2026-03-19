@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Über mich" description="Dr.(CS) Ernst Böhm — Arzt, Fotograf und Buchautor aus Unna, Soest und Arnsberg.">
+  <div class="page-container">
+    <h1 class="page-title">Über mich</h1>
+    <p class="subtitle">Arzt und Fotograf</p>
+
+    <div class="about-layout">
+      <div class="about-image">
+        <img
+          src="/images/misc/frieda.jpg"
+          alt="Dr. Ernst Böhm"
+        />
+      </div>
+
+      <div class="about-text">
+        <h2>Dr.(CS) Ernst Böhm</h2>
+
+        <ul class="timeline">
+          <li><span class="year">1953</span> Geboren in Deutsch Gabel (Böhmen)</li>
+          <li><span class="year">1972</span> Abitur am Gymnasium in Böhmisch Leipa</li>
+          <li><span class="year">1979</span> Promotion an der Karls-Universität Prag; chirurgische Weiterbildung</li>
+          <li><span class="year">1984</span> Übersiedlung nach Westdeutschland; Notarztausbildung</li>
+          <li><span class="year">1986</span> Flugschulausbildung in Arnsberg</li>
+          <li><span class="year">1988</span> Niederlassung als Allgemeinmediziner in Sundern/Sauerland</li>
+          <li><span class="year">2002</span> Abschluss einer dreijährigen Psychotherapieausbildung</li>
+          <li><span class="year">2009</span> Fotografieschule Köln</li>
+          <li><span class="year">2013</span> Zentraler Notaufnahmedienst am Marienkrankenhaus Soest</li>
+          <li><span class="year">2017</span> Chefarzt an der MEDIAN Klinik Bad Salzuflen (Kardiologie, Pneumologie, Gastroenterologie, Diabetologie)</li>
+          <li><span class="year">2018</span> Notaufnahme am Klinikum Lippe in Detmold</li>
+          <li><span class="year">2020</span> Facharzt für Allgemeinmedizin mit Lehrauftrag am MVZ Unna Königsborn</li>
+          <li><span class="year">2024</span> Aufnahme in den Gutachterpool der Ärztekammer Westfalen-Lippe als Sachverständiger und ärztlicher Berater</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.subtitle {
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .about-layout { grid-template-columns: 1fr; }
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.timeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.timeline li {
+  display: flex;
+  gap: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.year {
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 3rem;
+  flex-shrink: 0;
+}
+</style>
