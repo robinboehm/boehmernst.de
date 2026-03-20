@@ -1,1 +1,1 @@
-export const base = '/boehmernst.de';
+export const base = '';
